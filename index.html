@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Psychological Perspectives I - Daily Lesson Plan 6</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        montanoBlue: '#1269A8',
+                        montanoYellow: '#F7D615',
+                        montanoGreen: '#54887D',
+                        montanoLightBlue: '#88B5C7',
+                        montanoOlive: '#A6B046',
+                        montanoBg: '#F2F5E9'
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F2F5E9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .tab-btn.active {
+            background-color: #1269A8;
+            color: #ffffff;
+            border-bottom: 4px solid #F7D615;
+            transform: translateY(-2px);
+        }
+        .board-card {
+            background: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            border: 2px solid #88B5C7;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-800 flex flex-col justify-between p-2 md:p-6">
+
+    <!-- TOP HEADER / BANNER -->
+    <header class="board-card rounded-2xl p-4 md:p-6 mb-6 relative overflow-hidden bg-white">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 border-b-2 border-gray-100 pb-4">
+            <!-- Colegio Montano Branding -->
+            <div class="flex items-center gap-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyEop0yf6lZ7Jk9MILZxF1rBj4Oqs5esyhIQ&s" 
+                     alt="Colegio Montano Logo" 
+                     class="h-16 w-auto object-contain rounded-lg shadow-sm"
+                     onerror="this.src='https://placehold.co/120x60/1269A8/ffffff?text=Montano'">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-montanoBlue tracking-tight">COLEGIO MONTANO</h1>
+                    <p class="text-xs md:text-sm font-semibold text-montanoGreen tracking-wide uppercase">Interactive Digital Classroom Board</p>
+                </div>
+            </div>
+
+            <!-- Action Controls -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleFullScreen()" class="flex items-center gap-2 bg-montanoBlue hover:bg-opacity-90 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition duration-200 text-sm">
+                    <i class="fa-solid fa-expand"></i>
+                    <span>Fullscreen</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Class Plan Metadata -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mt-4 text-xs md:text-sm">
+            <div class="bg-blue-50 p-2.5 rounded-lg border border-blue-100">
+                <span class="block text-montanoBlue font-bold text-xs uppercase">Course</span>
+                <span class="font-semibold text-gray-700">Psychology</span>
+            </div>
+            <div class="bg-blue-50 p-2.5 rounded-lg border border-blue-100">
+                <span class="block text-montanoBlue font-bold text-xs uppercase">Grade</span>
+                <span class="font-semibold text-gray-700">5to Mercadotecnia</span>
+            </div>
+            <div class="bg-blue-50 p-2.5 rounded-lg border border-blue-100">
+                <span class="block text-montanoBlue font-bold text-xs uppercase">Unit / Plan</span>
+                <span class="font-semibold text-gray-700">Unit 1 - Plan #6</span>
+            </div>
+            <div class="bg-blue-50 p-2.5 rounded-lg border border-blue-100">
+                <span class="block text-montanoBlue font-bold text-xs uppercase">Date</span>
+                <span class="font-semibold text-gray-700">Feb 22 - 26</span>
+            </div>
+            <div class="bg-blue-50 p-2.5 rounded-lg border border-blue-100 col-span-2 md:col-span-1">
+                <span class="block text-montanoBlue font-bold text-xs uppercase">Teacher</span>
+                <span class="font-semibold text-gray-700">Elysa López</span>
+            </div>
+            <div class="bg-yellow-50 p-2.5 rounded-lg border border-yellow-200 col-span-2 md:col-span-2">
+                <span class="block text-montanoBlue font-bold text-xs uppercase">Topic</span>
+                <span class="font-bold text-montanoBlue">Modern Psychological Perspectives I</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- PEDAGOGICAL ALIGNMENT COLLAPSIBLE SUMMARY -->
+    <section class="mb-6">
+        <details class="board-card rounded-2xl bg-white overflow-hidden group">
+            <summary class="p-4 font-bold text-montanoBlue cursor-pointer flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-montanoOlive"></i>
+                    Pedagogical Framework & Institution Alignment (CNB Guatemala & Montano Habits)
+                </span>
+                <i class="fa-solid fa-chevron-down text-montanoBlue group-open:rotate-180 transition-transform"></i>
+            </summary>
+            <div class="p-5 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-gray-100 text-xs md:text-sm">
+                <div class="space-y-2">
+                    <h4 class="font-bold text-montanoGreen flex items-center gap-1.5">
+                        <i class="fa-solid fa-bullseye"></i> CNB Competence & Achievement
+                    </h4>
+                    <p class="text-gray-600"><strong>Competence:</strong> Applies modern psychological lenses (Biological, Behavioral, Cognitive, Psychodynamic) to deconstruct consumer purchasing decisions and marketing strategies.</p>
+                    <p class="text-gray-600"><strong>Learning Outcome:</strong> Differentiates neurological responses, reinforced habits, memory schemas, and unconscious motives in real-world commercial scenarios.</p>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-bold text-montanoGreen flex items-center gap-1.5">
+                        <i class="fa-solid fa-brain"></i> Key Competencies & Montano Habits
+                    </h4>
+                    <p class="text-gray-600"><strong>Skills:</strong> Analytical Perspective-Taking, Comparative Critique, Theoretical Application, Critical Evaluation.</p>
+                    <p class="text-gray-600"><strong>Montano Habits:</strong> <em>Think Win-Win</em> (balancing consumer value with psychological ad tactics) & <em>Synergize</em> (collaborating to evaluate theoretical limitations).</p>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-bold text-montanoGreen flex items-center gap-1.5">
+                        <i class="fa-solid fa-box-open"></i> Resources & Assessment
+                    </h4>
+                    <p class="text-gray-600"><strong>Resources:</strong> Digital Board, Scenario Breakdown Cards, Perspective Comparison Matrix, Interactive Rubric.</p>
+                    <p class="text-gray-600"><strong>3 Assessment Moments:</strong> Consumer Impulse Hook (Initial), Ad Scenario Analysis (Formative), Matrix Defense & Exit Ticket (Summative).</p>
+                </div>
+            </div>
+        </details>
+    </section>
+
+    <!-- MAIN PEDAGOGICAL SEQUENCE (TABS) -->
+    <main class="board-card rounded-2xl p-4 md:p-6 mb-6 bg-white flex-grow">
+        <!-- TAB NAVIGATION -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6 border-b border-gray-200 pb-4">
+            <button onclick="switchTab(1)" id="tab-btn-1" class="tab-btn active p-3 rounded-xl font-bold text-sm md:text-base flex flex-col items-center justify-center gap-1 transition-all bg-gray-100 text-gray-700">
+                <span class="text-xs uppercase tracking-wider text-montanoYellow font-black">Stage I (~5 min)</span>
+                <span><i class="fa-solid fa-cart-shopping mr-1"></i> Consumer Hook</span>
+            </button>
+            <button onclick="switchTab(2)" id="tab-btn-2" class="tab-btn p-3 rounded-xl font-bold text-sm md:text-base flex flex-col items-center justify-center gap-1 transition-all bg-gray-100 text-gray-700">
+                <span class="text-xs uppercase tracking-wider text-montanoYellow font-black">Stage II (20 min)</span>
+                <span><i class="fa-solid fa-layer-group mr-1"></i> 4 Modern Lenses</span>
+            </button>
+            <button onclick="switchTab(3)" id="tab-btn-3" class="tab-btn p-3 rounded-xl font-bold text-sm md:text-base flex flex-col items-center justify-center gap-1 transition-all bg-gray-100 text-gray-700">
+                <span class="text-xs uppercase tracking-wider text-montanoYellow font-black">Stage III (15 min)</span>
+                <span><i class="fa-solid fa-rectangle-ad mr-1"></i> Ad Application Scenario</span>
+            </button>
+            <button onclick="switchTab(4)" id="tab-btn-4" class="tab-btn p-3 rounded-xl font-bold text-sm md:text-base flex flex-col items-center justify-center gap-1 transition-all bg-gray-100 text-gray-700">
+                <span class="text-xs uppercase tracking-wider text-montanoYellow font-black">Stage IV (20 min)</span>
+                <span><i class="fa-solid fa-[#1269A8] fa-scale-balanced mr-1"></i> Compare & Critique</span>
+            </button>
+        </div>
+
+        <!-- TAB CONTENT CONTAINER -->
+        <div id="tab-contents">
+            <!-- STAGE I: CONSUMER HOOK -->
+            <div id="tab-1" class="tab-content space-y-6">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-montanoBlue p-5 rounded-r-xl">
+                    <h3 class="text-xl font-bold text-montanoBlue mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb text-montanoYellow"></i> Stage I: Consumer Behavior Warm-Up (~5 Minutes)
+                    </h3>
+                    <p class="text-gray-700 text-sm md:text-base">
+                        <strong>Real-World Case:</strong> <em>"A customer buys an expensive luxury watch during a late-night online flash sale. Why did they do it?"</em>
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                        <h4 class="font-bold text-montanoGreen mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-comments"></i> Explanatory Angles
+                        </h4>
+                        <ul class="list-disc list-inside text-sm text-gray-700 space-y-2">
+                            <li>Was it a <strong>dopamine rush</strong> in the brain? (Biological)</li>
+                            <li>Was it a <strong>rewarded habit</strong> from previous flash sales? (Behavioral)</li>
+                            <li>Was it a <strong>calculated thought process</strong> about status and features? (Cognitive)</li>
+                            <li>Was it an <strong>unconscious drive</strong> to feel successful and validated? (Psychodynamic)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-bold text-montanoBlue mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-eye"></i> Why Perspective Matters
+                            </h4>
+                            <p class="text-xs text-gray-500 mb-3">Click below to see why modern psychologists use multiple lenses:</p>
+                        </div>
+                        <button onclick="toggleAnswer('hook-ans')" class="w-full bg-montanoOlive text-white font-semibold py-2 rounded-lg hover:bg-opacity-90 transition text-sm">
+                            Show Marketing Takeaway
+                        </button>
+                        <div id="hook-ans" class="hidden mt-3 p-3 bg-white border border-montanoOlive rounded-lg text-xs text-gray-700">
+                            <strong>Takeaway:</strong> No single perspective explains 100% of human behavior. Marketers who understand all four lenses can build far more comprehensive consumer engagement strategies!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE II: 4 MODERN LENSES -->
+            <div id="tab-2" class="tab-content hidden space-y-6">
+                <div class="bg-gradient-to-r from-emerald-50 to-teal-50 border-l-4 border-montanoGreen p-5 rounded-r-xl">
+                    <h3 class="text-xl font-bold text-montanoGreen mb-1 flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group"></i> Stage II: Direct Instruction - 4 Modern Perspectives (~20 Minutes)
+                    </h3>
+                    <p class="text-gray-700 text-sm">Biological, Behavioral, Cognitive, and Psychodynamic Theoretical Frameworks.</p>
+                </div>
+
+                <!-- 4 Perspectives Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs md:text-sm">
+                    <!-- Biological -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="bg-red-100 text-red-800 font-bold px-2.5 py-1 rounded text-xs uppercase">1. Biological</span>
+                            <h4 class="font-bold text-gray-800 text-base mt-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-dna text-red-600"></i> Brain & Physiology
+                            </h4>
+                            <p class="text-gray-600 mt-2"><strong>Focus:</strong> Neurotransmitters, hormones, brain structure, genetic predispositions.</p>
+                            <p class="text-gray-500 mt-2"><strong>Key Mechanism:</strong> Dopamine reward pathways triggered by instant visual cues.</p>
+                        </div>
+                    </div>
+
+                    <!-- Behavioral -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="bg-yellow-100 text-yellow-800 font-bold px-2.5 py-1 rounded text-xs uppercase">2. Behavioral</span>
+                            <h4 class="font-bold text-gray-800 text-base mt-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-gears text-yellow-600"></i> Conditioning & Habits
+                            </h4>
+                            <p class="text-gray-600 mt-2"><strong>Focus:</strong> Environmental stimuli, observable responses, rewards, and punishments.</p>
+                            <p class="text-gray-500 mt-2"><strong>Key Mechanism:</strong> Positive reinforcement via discounts, loyalty points, and repetitive exposure.</p>
+                        </div>
+                    </div>
+
+                    <!-- Cognitive -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="bg-blue-100 text-montanoBlue font-bold px-2.5 py-1 rounded text-xs uppercase">3. Cognitive</span>
+                            <h4 class="font-bold text-gray-800 text-base mt-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-brain text-montanoBlue"></i> Information Processing
+                            </h4>
+                            <p class="text-gray-600 mt-2"><strong>Focus:</strong> Memory storage, perception, decision-making, attention, problem solving.</p>
+                            <p class="text-gray-500 mt-2"><strong>Key Mechanism:</strong> Brand schemas, price-value comparison, and cognitive bias processing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Psychodynamic -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="bg-purple-100 text-purple-800 font-bold px-2.5 py-1 rounded text-xs uppercase">4. Psychodynamic</span>
+                            <h4 class="font-bold text-gray-800 text-base mt-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-mask text-purple-600"></i> Unconscious Drivers
+                            </h4>
+                            <p class="text-gray-600 mt-2"><strong>Focus:</strong> Hidden desires, unresolved internal conflicts, defense mechanisms, ego protection.</p>
+                            <p class="text-gray-500 mt-2"><strong>Key Mechanism:</strong> Purchasing products to satisfy repressed emotional needs or project status.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guided Interactive Quick-Check -->
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <h5 class="font-bold text-montanoBlue text-sm mb-2">Interactive Lens Identification:</h5>
+                    <div class="space-y-2 text-xs">
+                        <div class="p-2 bg-white rounded border flex justify-between items-center">
+                            <span>"A customer buys an energy drink because seeing the logo triggers a habitual muscle memory action learned over 3 years."</span>
+                            <button onclick="toggleAnswer('lens-1')" class="bg-montanoLightBlue text-white px-2 py-1 rounded font-bold">Show Lens</button>
+                        </div>
+                        <div id="lens-1" class="hidden p-2 bg-blue-50 text-montanoBlue font-semibold rounded">Behavioral Perspective (Conditioned Habit)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE III: AD APPLICATION SCENARIO -->
+            <div id="tab-3" class="tab-content hidden space-y-6">
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 border-l-4 border-montanoYellow p-5 rounded-r-xl">
+                    <h3 class="text-xl font-bold text-gray-800 mb-1 flex items-center gap-2">
+                        <i class="fa-solid fa-rectangle-ad text-montanoBlue"></i> Stage III: Apply Lenses to Ad Campaign (~15 Minutes)
+                    </h3>
+                    <p class="text-gray-700 text-sm">Applying each perspective to a fictional advertising launch for a high-end noise-canceling headphone.</p>
+                </div>
+
+                <!-- Scenario Card & Task -->
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                    <h4 class="font-bold text-montanoBlue text-base mb-2">Campaign Case: "Aura Silence Pro Headphones"</h4>
+                    <p class="text-xs md:text-sm text-gray-600 mb-4">Ad Tagline: <em>"Escape the chaos. Take control of your peace."</em></p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm">
+                        <div class="p-3 bg-red-50 rounded-lg border border-red-100">
+                            <strong class="text-red-800 block mb-1">Biological Application:</strong>
+                            <p class="text-gray-600">The ad uses soothing low-frequency tones and calm color palettes to reduce cortisol (stress hormone) levels and stimulate relaxation centers in the brain.</p>
+                        </div>
+
+                        <div class="p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                            <strong class="text-yellow-800 block mb-1">Behavioral Application:</strong>
+                            <p class="text-gray-600">Offers a 30-day free trial with cashback rewards, creating positive reinforcement every time the user puts on the headphones.</p>
+                        </div>
+
+                        <div class="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                            <strong class="text-montanoBlue block mb-1">Cognitive Application:</strong>
+                            <p class="text-gray-600">Presents side-by-side technical spec comparisons showing 99.4% noise filtration, appealing to logical memory schemas and analytical processing.</p>
+                        </div>
+
+                        <div class="p-3 bg-purple-50 rounded-lg border border-purple-100">
+                            <strong class="text-purple-800 block mb-1">Psychodynamic Application:</strong>
+                            <p class="text-gray-600">Taps into unconscious feelings of being overwhelmed by work environments, offering the product as a symbolic defense mechanism against emotional anxiety.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE IV: COMPARE & CRITIQUE -->
+            <div id="tab-4" class="tab-content hidden space-y-6">
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-montanoOlive p-5 rounded-r-xl">
+                    <h3 class="text-xl font-bold text-montanoBlue mb-1 flex items-center gap-2">
+                        <i class="fa-solid fa-scale-balanced text-montanoYellow"></i> Stage IV: Compare Explanations & Identify Limitations (~20 Minutes)
+                    </h3>
+                    <p class="text-gray-700 text-sm">15 min Comparative Analysis Matrix + 5 min Exit Ticket</p>
+                </div>
+
+                <!-- Comparison & Limitations Matrix -->
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                    <h4 class="font-bold text-montanoBlue mb-3">Theoretical Strengths & Limitations Matrix</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs md:text-sm text-left border-collapse">
+                            <thead class="bg-montanoBlue text-white uppercase text-xs">
+                                <tr>
+                                    <th class="p-3 rounded-tl-lg">Perspective</th>
+                                    <th class="p-3">Primary Strength in Marketing</th>
+                                    <th class="p-3">Core Theoretical Limitation</th>
+                                    <th class="p-3 rounded-tr-lg">Best Use Case</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-700">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-bold text-red-700">Biological</td>
+                                    <td class="p-3">Grounded in measurable physiological data (eye tracking, brain scans).</td>
+                                    <td class="p-3">Ignores social environment, cultural values, and conscious reasoning.</td>
+                                    <td class="p-3">Sensory packaging & packaging design testing.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-bold text-yellow-700">Behavioral</td>
+                                    <td class="p-3">Highly effective for creating repeatable purchasing habits.</td>
+                                    <td class="p-3">Overlooks internal thought processes and subjective emotions.</td>
+                                    <td class="p-3">Loyalty programs, pricing discounts & ad repetition.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-bold text-montanoBlue">Cognitive</td>
+                                    <td class="p-3">Explains how information, memory, and logical decisions work.</td>
+                                    <td class="p-3">Assumes consumers are always rational decision-makers.</td>
+                                    <td class="p-3">High-involvement products (electronics, vehicles).</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-bold text-purple-700">Psychodynamic</td>
+                                    <td class="p-3">Uncovers deep emotional motivations and brand attachment.</td>
+                                    <td class="p-3">Hard to verify scientifically; relies on subjective inference.</td>
+                                    <td class="p-3">Luxury branding, status symbols & emotional campaigns.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Exit Ticket -->
+                <div class="bg-blue-50 p-5 rounded-xl border border-montanoLightBlue">
+                    <h4 class="font-bold text-montanoBlue text-sm mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-ticket"></i> 5-Minute Exit Ticket Prompt (Individual Submission)
+                    </h4>
+                    <p class="text-xs md:text-sm text-gray-700">Write 1 sentence: <strong>"Which psychological perspective has the biggest limitation when explaining impulse buying, and why?"</strong></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- INTERACTIVE PLENARY EVALUATION RUBRIC -->
+    <section class="board-card rounded-2xl p-4 md:p-6 bg-white">
+        <h3 class="text-lg font-bold text-montanoBlue mb-4 flex items-center gap-2 border-b pb-2">
+            <i class="fa-solid fa-clipboard-check text-montanoGreen"></i> Plenary Evaluation Rubric (Interactive Scoring Tool for Teacher)
+        </h3>
+        
+        <div class="overflow-x-auto">
+            <table class="w-full text-xs md:text-sm text-left border-collapse">
+                <thead class="bg-gray-100 text-montanoBlue uppercase font-bold text-xs">
+                    <tr>
+                        <th class="p-3 border">Criteria</th>
+                        <th class="p-3 border">Needs Improvement (1 pt)</th>
+                        <th class="p-3 border">Satisfactory (2 pts)</th>
+                        <th class="p-3 border">Exemplary (3 pts)</th>
+                        <th class="p-3 border text-center">Interactive Score</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y text-gray-700">
+                    <tr>
+                        <td class="p-3 font-bold border bg-gray-50">1. Perspective Accuracy</td>
+                        <td class="p-3 border">Confuses core concepts among the 4 modern perspectives.</td>
+                        <td class="p-3 border">Explains perspectives accurately with minor conceptual overlap.</td>
+                        <td class="p-3 border">Demonstrates precise distinction between Biological, Behavioral, Cognitive, and Psychodynamic lenses.</td>
+                        <td class="p-3 border text-center">
+                            <select onchange="calculateRubricScore()" class="rubric-score bg-blue-50 border border-blue-200 rounded p-1 font-bold text-montanoBlue">
+                                <option value="1">1 pt</option>
+                                <option value="2">2 pts</option>
+                                <option value="3" selected>3 pts</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 font-bold border bg-gray-50">2. Ad Scenario Application</td>
+                        <td class="p-3 border">Fails to apply perspectives to commercial scenarios.</td>
+                        <td class="p-3 border">Applies 2-3 perspectives to marketing ad examples.</td>
+                        <td class="p-3 border">Articulates rich, creative applications for all 4 perspectives in ad campaigns.</td>
+                        <td class="p-3 border text-center">
+                            <select onchange="calculateRubricScore()" class="rubric-score bg-blue-50 border border-blue-200 rounded p-1 font-bold text-montanoBlue">
+                                <option value="1">1 pt</option>
+                                <option value="2">2 pts</option>
+                                <option value="3" selected>3 pts</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 font-bold border bg-gray-50">3. Critique of Limitations</td>
+                        <td class="p-3 border">Cannot identify weaknesses or blind spots of theories.</td>
+                        <td class="p-3 border">Identifies basic limitations for most perspectives.</td>
+                        <td class="p-3 border">Critically evaluates the theoretical boundaries and trade-offs of each lens.</td>
+                        <td class="p-3 border text-center">
+                            <select onchange="calculateRubricScore()" class="rubric-score bg-blue-50 border border-blue-200 rounded p-1 font-bold text-montanoBlue">
+                                <option value="1">1 pt</option>
+                                <option value="2">2 pts</option>
+                                <option value="3" selected>3 pts</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 font-bold border bg-gray-50">4. Plenary Communication</td>
+                        <td class="p-3 border">Unclear presentation during team defense.</td>
+                        <td class="p-3 border">Presents findings clearly using basic vocabulary.</td>
+                        <td class="p-3 border">Delivers crisp, persuasive defense with professional psychological terminology.</td>
+                        <td class="p-3 border text-center">
+                            <select onchange="calculateRubricScore()" class="rubric-score bg-blue-50 border border-blue-200 rounded p-1 font-bold text-montanoBlue">
+                                <option value="1">1 pt</option>
+                                <option value="2">2 pts</option>
+                                <option value="3" selected>3 pts</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Rubric Total Result -->
+        <div class="mt-4 flex justify-between items-center bg-montanoBg p-3 rounded-xl border border-montanoOlive">
+            <span class="font-bold text-montanoBlue text-sm">Total Team Assessment Score:</span>
+            <span id="rubric-total" class="text-lg font-black text-montanoBlue bg-white px-4 py-1 rounded-lg border border-gray-200">12 / 12 pts</span>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-6 text-center text-xs text-gray-500 py-2">
+        Colegio Montano &copy; 2026 | Pedagogical Digital Board System | Model CNB Guatemala
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Tab Navigation Switcher
+        function switchTab(tabIndex) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(`tab-${tabIndex}`).classList.remove('hidden');
+            document.getElementById(`tab-btn-${tabIndex}`).classList.add('active');
+        }
+
+        // Toggle Hidden Solution / Content Accordion
+        function toggleAnswer(id) {
+            const el = document.getElementById(id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+
+        // Fullscreen Toggle Functionality
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Rubric Calculation Logic
+        function calculateRubricScore() {
+            const selects = document.querySelectorAll('.rubric-score');
+            let total = 0;
+            selects.forEach(select => {
+                total += parseInt(select.value, 10);
+            });
+            document.getElementById('rubric-total').innerText = `${total} / 12 pts`;
+        }
+    </script>
+</body>
+</html>
